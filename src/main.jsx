@@ -11,7 +11,7 @@ export const useAuth = () => useContext(AuthContext);
 
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => !!localStorage.getItem("Token")); // Initialize user state
+  const [user, setUser] = useState(() => !!localStorage.getItem("Token"));
 
   useEffect(() => {
     const token = localStorage.getItem("Token");

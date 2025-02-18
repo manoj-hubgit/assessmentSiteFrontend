@@ -12,7 +12,7 @@ const User = () => {
 
   const handlePasskeySubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/question/verify-passkey", { passkey });
+      const response = await axios.post("https://assessmentsitebackend.onrender.com/api/question/verify-passkey", { passkey });
       if (response.data.success) {
         setCollectionName(response.data.collectionName);
         setQuestions(response.data.questions);
@@ -39,7 +39,7 @@ const User = () => {
         return;
       }
 
-      const response = await axios.post("http://localhost:5000/api/result/store", {
+      const response = await axios.post("https://assessmentsitebackend.onrender.com/api/result/store", {
         userId, 
         collectionName,
         score, 

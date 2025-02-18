@@ -33,7 +33,7 @@ const AddQuestion = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/questions", {
+      const res = await axios.post("https://assessmentsitebackend.onrender.com/api/questions", {
         collectionName,
         password,
         questionText,

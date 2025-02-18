@@ -19,13 +19,13 @@ const Admin = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const collectionResponse = await fetch("http://localhost:5000/api/question/collectionsName");
+                const collectionResponse = await fetch("https://assessmentsitebackend.onrender.com/api/question/collectionsName");
                 if (!collectionResponse.ok) throw new Error("Failed to fetch collections");
 
                 const collectionData = await collectionResponse.json();
                 setCollections(collectionData.collections || []);
 
-                const resultResponse = await fetch("http://localhost:5000/api/result/getAllResult");
+                const resultResponse = await fetch("https://assessmentsitebackend.onrender.com/api/result/getAllResult");
                 if (!resultResponse.ok) throw new Error("Failed to fetch user results");
 
                 const resultData = await resultResponse.json();
@@ -55,7 +55,7 @@ const Admin = () => {
         const newQuestion = { collectionName, questionText, options, correctAnswer, password };
 
         try {
-            const response = await fetch("http://localhost:5000/api/question/addQuestion", {
+            const response = await fetch("https://assessmentsitebackend.onrender.com/api/question/addQuestion", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newQuestion),
@@ -82,13 +82,12 @@ const Admin = () => {
     const handleDeleteCollection = async (collectionName) => {
         if (window.confirm(`Are you sure you want to delete the collection "${collectionName}"?`)) {
             try {
-                const response = await fetch(`http://localhost:5000/api/question/deleteCollection/${collectionName}`, {
+                const response = await fetch(`https://assessmentsitebackend.onrender.com/api/question/deleteCollection/${collectionName}`, {
                     method: "DELETE",
                 });
 
                 if (!response.ok) throw new Error("Failed to delete collection");
 
-                // Filter out the deleted collection from the collections state
                 setCollections((prevCollections) =>
                     prevCollections.filter((col) => col !== collectionName)
                 );
