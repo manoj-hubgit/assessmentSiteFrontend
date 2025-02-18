@@ -52,6 +52,11 @@ const Signin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
+     <div className="mb-4">
+        <p className="text-red-600">To login as Admin use Email: manoj@gmail.com</p>
+        <p className="text-red-600">Password: 123456</p>
+        <p className="text-red-600">Sample Exam Passkey: 123456</p>
+      </div>
       <div className="p-6 max-w-md w-full">
         <h2 className="text-2xl font-bold mb-4">Sign In</h2>
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
