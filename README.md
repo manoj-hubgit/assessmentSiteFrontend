@@ -1,8 +1,15 @@
-# React + Vite
+# Assessment Platform - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of the Assessment Platform, where users can attend exams using a passkey and view their scores instantly. Admins can manage collections of questions.
 
-Currently, two official plugins are available:
+## Features
+- Admin can create, view, and delete question collections.
+- Users can access exams using a passkey.
+- Users can complete the exam and get their scores instantly.
+- Responsive UI for both desktop and mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Framework**: React.js
+- **State Management**: UseContext
+- **Styling**:  React Flowbite
+- **API Calls**: Axios / Fetch API
